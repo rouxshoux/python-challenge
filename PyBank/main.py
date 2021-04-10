@@ -53,3 +53,4 @@ with open(output_file, 'w',) as txtfile:
     txtfile.write(f"Average Change: ${net_month_change}\n")
     txtfile.write(f"Greatest Increase in Profits:, {great_inc}, (${great_inc[1]})\n")
     txtfile.write(f"Greatest Decrease in Profits:, {great_dec}, (${great_dec[1]})\n")
+    
