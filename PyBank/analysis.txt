@@ -20,7 +20,7 @@ with open(pybank_path, newline='') as csvfile:
     
     for row in csvreader:
         ttl_month = ttl_month + 1
-        ttl_net - ttl_net + int(first_row[1])
+        ttl_net = ttl_net + int(first_row[1])
         net_change = int(row[1]) - previous_net
         previous_net = int(row[1])
         net_change_list = net_change_list + [net_change]
@@ -40,16 +40,15 @@ print(f"Average Change: ${net_month_average}")
 print(f"Greatest Increase in Profits: {great_inc[0]} (${great_inc[1]})")
 print(f"Greatest Decrease in Profits: {great_dec[0]} (${great_dec[1]})")
 
-output_file = os.path.join("Desktop/coding/01_All_My_Repos/python-challenge/PyBank/Resources/budget_data.csv")
 
-# Open File Using "Write" Mode. Specify The Variable To Hold The Contents
-with open(output_file, 'w',) as txtfile:
 
-# Write New Data
-    txtfile.write(f"Financial Analysis\n")
-    txtfile.write(f"---------------------------\n")
-    txtfile.write(f"Total Months: {ttl_month}\n")
-    txtfile.write(f"Total: ${ttl_net}\n")
-    txtfile.write(f"Average Change: ${net_month_change}\n")
-    txtfile.write(f"Greatest Increase in Profits:, {great_inc[0]}, (${great_inc[1]})\n")
-    txtfile.write(f"Greatest Decrease in Profits:, {great_dec[0]}, (${great_dec[1]})\n")
+output = (
+   f"\nFinancial Analysis\n"
+   f"----------------------------\n"
+   f"Total Months: {ttl_month}\n"
+   f"Total: ${ttl_net}\n"
+   f"Average  Change: ${net_month_average}\n"
+   f"Greatest Increase in Profits: {great_inc[0]} (${great_inc[1]})\n"
+   f"Greatest Decrease in Profits: {great_dec[0]} (${great_dec[1]})\n")
+with open("output.txt", 'w') as txt_file:
+    txt_file.write(output)
