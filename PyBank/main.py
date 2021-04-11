@@ -1,7 +1,7 @@
 import os
 import csv
+pybank_path = "Resources/budget_data.csv"
 
-pybank_path = os.path.join('..', 'Resources','budget_data.csv')
 
 ttl_month = 0
 month_change = []
